@@ -33,12 +33,12 @@ let createTimeInEvent = function (y){
   date1 = date1.join("");
   let hour1 = z.slice(11,15);
   hour1 = parseInt(hour1.join(""),10);
-  let obj2 = {
+  
+  this.timeInEvents.push({
     type: "TimeIn",
     hour: hour1,
     date: date1
-  };
-  this.timeInEvents.push(obj2)
+  })
 return this;
 }
 function createTimeOutEvent(y){
