@@ -38,9 +38,10 @@ let createTimeInEvent = (y) => {
     hour: hour1,
     date: date1
   }
-
+  this.timeInEvents.push(obj2);
+return this;
 }
-function createTimeOutEvent(x,y){
+function createTimeOutEvent(y){
   let z = Array.from(y);
   let date1 = z.slice(0,10);
   date1 = date1.join("");
@@ -51,22 +52,23 @@ function createTimeOutEvent(x,y){
     hour: hour1,
     date: date1
   }
-  x.timeOutEvents.push(obj2);
-  return x;
+  this.timeOutEvents.push(obj2);
+return this;
+}
 
 }
 
-function hoursWorkedOnDate(x,y){
+function hoursWorkedOnDate(y){
   let z=0;
-  if (y === x.timeOutEvents[0].date)
-   z = (x.timeOutEvents[0].hour)/100 - (x.timeInEvents[0].hour)/100;
+  if (y === this.timeOutEvents[0].date)
+   z = (this.timeOutEvents[0].hour)/100 - (x.timeInEvents[0].hour)/100;
     return z;
    }
 
-function wagesEarnedOnDate(a,b){
+function wagesEarnedOnDate(b){
   let z=0;
-  if (b === a.timeOutEvents[0].date)
- z = hoursWorkedOnDate(a,b) * a.payPerHour;
+  if (b === this.timeOutEvents[0].date)
+ z = hoursWorkedOnDate.call(this,b) * this.payPerHour;
  return z;
 }
 
@@ -82,4 +84,13 @@ let allWagesFor = function () {
     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
 
     return payable
+}
+function findEmployeeByFirstName(i,j){
+return  i.find(ele => ele.firstName === j)
+
+}
+
+function calculatePayroll(v){
+   let z = v.reduce((accum, sum) =>  accum + allWagesFor(sum),0)
+return z;
 }
