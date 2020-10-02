@@ -59,14 +59,16 @@ function hoursWorkedOnDate(y){
   let z=0;
   let inEvent = this.timeInEvents.find(function(e){
         return e.date === y
+        
     })
+    console.log(inEvent)
     let outEvent = this.timeOutEvents.find(function(e){
           return e.date === y
       })
    z = (outEvent.hour)/100 - (inEvent.hour)/100;
     return z;
    }
-
+hoursWorkedOnDate("44-03-15")
 function wagesEarnedOnDate(b){
   let z=0;
   if (b === this.timeOutEvents[0].date)
