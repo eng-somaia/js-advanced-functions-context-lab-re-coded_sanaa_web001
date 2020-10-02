@@ -33,12 +33,12 @@ let createTimeInEvent = function (y){
   date1 = date1.join("");
   let hour1 = z.slice(11,15);
   hour1 = parseInt(hour1.join(""),10);
-
-  this.timeInEvents.push({
+  let obj2 = {
     type: "TimeIn",
     hour: hour1,
     date: date1
-  })
+  };
+  this.timeInEvents.push(obj2)
 return this;
 }
 function createTimeOutEvent(y){
@@ -69,7 +69,6 @@ let hoursWorkedOnDate = function(soughtDate){
 
 function wagesEarnedOnDate(b){
   let z=0;
-  if (b === this.timeOutEvents[0].date)
  z = hoursWorkedOnDate.call(this,b) * this.payPerHour;
  return z;
 }
