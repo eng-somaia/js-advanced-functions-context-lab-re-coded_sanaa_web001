@@ -9,7 +9,7 @@
  for you to use if you need it!
  */
 
-let createEmployeeRecord = (x) =>{
+let createEmployeeRecord = function (x){
   let timeIn = [];
   let timeOut = [];
   let obj = {
@@ -22,12 +22,12 @@ let createEmployeeRecord = (x) =>{
   }
   return obj;
 }
-let createEmployeeRecords = (x) => {
+let createEmployeeRecords = function (x){
 
   let newArray = x.map(createEmployeeRecord);
   return newArray;
 }
-let createTimeInEvent = (y) => {
+let createTimeInEvent = function (y){
   let z = Array.from(y);
   let date1 = z.slice(0,10);
   date1 = date1.join("");
@@ -86,6 +86,6 @@ return  i.find(ele => ele.firstName === j)
 }
 
 function calculatePayroll(v){
-   let z = v.reduce((accum, sum) =>  accum + allWagesFor(sum),0)
+   let z = v.reduce(function (accum, sum) {accum + allWagesFor(sum)},0)
 return z;
 }
