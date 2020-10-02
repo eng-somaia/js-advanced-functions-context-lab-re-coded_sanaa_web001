@@ -63,7 +63,7 @@ function hoursWorkedOnDate(y){
     let outEvent = this.timeOutEvents.find(function(e){
           return e.date === y
       })
-   z = outEvent.hour/100 - inEvent.hour/100;
+   z = (outEvent.hour)/100 - (inEvent.hour)/100;
     return z;
    }
 
