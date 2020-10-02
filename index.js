@@ -55,9 +55,6 @@ function createTimeOutEvent(y){
   this.timeOutEvents.push(obj2);
 return this;
 }
-
-}
-
 function hoursWorkedOnDate(y){
   let z=0;
   if (y === this.timeOutEvents[0].date)
@@ -71,8 +68,6 @@ function wagesEarnedOnDate(b){
  z = hoursWorkedOnDate.call(this,b) * this.payPerHour;
  return z;
 }
-
-
 
 let allWagesFor = function () {
     let eligibleDates = this.timeInEvents.map(function (e) {
