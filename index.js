@@ -55,19 +55,17 @@ function createTimeOutEvent(y){
   this.timeOutEvents.push(obj2);
 return this;
 }
-function hoursWorkedOnDate(y){
-  let z=0;
-  let inEvent = this.timeInEvents.find(function(e){
-        return e.date === y
-
+let hoursWorkedOnDate = function(soughtDate){
+    let inEvent = this.timeInEvents.find(function(e){
+        return e.date === soughtDate
     })
-    console.log(inEvent)
+
     let outEvent = this.timeOutEvents.find(function(e){
-          return e.date === y
-      })
-   z = (outEvent.hour)/100 - (inEvent.hour)/100;
-    return z;
-   }
+        return e.date === soughtDate
+    })
+
+    return (outEvent.hour - inEvent.hour) / 100
+}
 hoursWorkedOnDate("44-03-15")
 function wagesEarnedOnDate(b){
   let z=0;
