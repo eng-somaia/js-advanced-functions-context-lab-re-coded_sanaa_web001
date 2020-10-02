@@ -59,7 +59,7 @@ function hoursWorkedOnDate(y){
   let z=0;
   let inEvent = this.timeInEvents.find(function(e){
         return e.date === y
-        
+
     })
     console.log(inEvent)
     let outEvent = this.timeOutEvents.find(function(e){
