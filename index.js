@@ -58,10 +58,10 @@ return this;
 function hoursWorkedOnDate(y){
   let z=0;
   let inEvent = this.timeInEvents.find(function(e){
-        return e.date === soughtDate
+        return e.date === y
     })
     let outEvent = this.timeOutEvents.find(function(e){
-          return e.date === soughtDate
+          return e.date === y
       })
    z = outEvent/100 - inEvent/100;
     return z;
