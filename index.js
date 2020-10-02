@@ -85,6 +85,6 @@ return  i.find(ele => ele.firstName === j)
 }
 
 function calculatePayroll(v){
-   let z = v.reduce(function (accum, sum) {accum + allWagesFor.call(sum)},0)
+   let z = v.reduce(function (accum, sum) {return accum + allWagesFor.call(sum)},0)
 return z;
 }
