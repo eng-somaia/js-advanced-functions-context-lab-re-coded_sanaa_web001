@@ -37,7 +37,7 @@ let createTimeInEvent = (y) => {
     type: "TimeIn",
     hour: hour1,
     date: date1
-  }
+  };
   this.timeInEvents.push(obj2)
 return this;
 }
